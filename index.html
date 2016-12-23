@@ -8,12 +8,14 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 for(var i = 1;i <= 151;i++){
-                    $('.left').append('<img class="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>');
-                    console.log('<img class="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>');
+                    $('.left').append('<img data-rel="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>');
+                    console.log('<img data-rel="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>');
                 }
 
                 $('img').click(function(){
-                    $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+                    var poke = $(this).attr('data-rel');
+                    console.log(poke);
+                    $.get('http://pokeapi.co/api/v1/pokemon/' + poke + '/', function(res) {
                         var html_str = "";
                         html_str += "<h4>Types</h4>";
                         html_str += "<ul>";
@@ -21,21 +23,10 @@
                             html_str += "<li>" + res.types[idx].name + "</li>";
                         }
                         html_str += "</ul>";
-                        $(".right").html('<img class="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>' + html_str + "<h4>Attack</h4>" + res.attack + "<h4>Height</h4>" + res.height);
+                        $(".right").html(
+                            '<img data-rel="' + poke + '" src="http://pokeapi.co/media/img/' + poke + '.png"/>' + html_str + "<h4>Attack</h4>" + res.attack + "<h4>Height</h4>" + res.height);
                     }, "json");
                 });
-                // $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
-                //     var html_str = "";
-                //     html_str += "<h4>Types</h4>";
-                //     html_str += "<ul>";
-                //     for(var idx = 0; idx < res.types.length; idx++) {
-                //         html_str += "<li>" + res.types[idx].name + "</li>";
-                //     }
-                //     html_str += "</ul>";
-                //     $(".right").html('<img class="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>' + html_str + "<h4>Attack</h4>" + res.attack + "<h4>Height</h4>" + res.height);
-                // }, "json");
-                //
-
             });
         </script>
     </head>
