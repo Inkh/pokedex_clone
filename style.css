@@ -1,0 +1,22 @@
+*{
+    margin:0px;
+    padding:0px;
+    vertical-align: top;
+}
+.left{
+    width:70%;
+    height:auto;
+    display:inline-block;
+    border: 2px solid black;
+}
+.right{
+    width:25%;
+    height:500px;
+    display:inline-block;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding:30px;
+}
+/*$.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+    console.log(res.abilities[0].name);
+    },"json");*/
