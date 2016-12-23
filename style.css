@@ -24,12 +24,13 @@
     width:20%;
     height:500px;
     display:inline-block;
-    border: 50px solid #A93226;
+    border: 40px solid #A93226;
     box-sizing: border-box;
     padding:30px 30px 30px 60px;
     background-color: white;
     margin-left: 90px;
     margin-top: 30px;
+    border-bottom-width: 80px;
     /*text-align: center;*/
 }
 /*$.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
@@ -48,4 +49,10 @@ h1{
     line-height:100px;
     margin-left: 50px;
     color:white;
+}
+.shadow{
+    box-shadow: 0px 0px 4px black;
+}
+.noshad{
+    
 }

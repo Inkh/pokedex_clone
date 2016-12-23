@@ -11,8 +11,16 @@
                     $('.left').append('<img data-rel="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>');
                     console.log('<img data-rel="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>');
                 }
+                $('img').hover(function(){
+                    $(this).toggleClass('shadow');
+                });
+                $('img').click(function(){
+                    console.log("work?");
+                    $(this).toggleClass('noshad');
+                });
 
                 $('img').click(function(){
+                    // console.log("work?");
                     var poke = $(this).attr('data-rel');
                     console.log(poke);
                     $.get('http://pokeapi.co/api/v1/pokemon/' + poke + '/', function(res) {
