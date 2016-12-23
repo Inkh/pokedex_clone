@@ -12,16 +12,30 @@
                     console.log('<img class="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>');
                 }
 
-                $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
-                    var html_str = "";
-                    html_str += "<h4>Types</h4>";
-                    html_str += "<ul>";
-                    for(var i = 0; i < res.types.length; i++) {
-                        html_str += "<li>" + res.types[i].name + "</li>";
-                    }
-                    html_str += "</ul>";
-                    $(".right").html(html_str);
-                }, "json");
+                $('img').click(function(){
+                    $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+                        var html_str = "";
+                        html_str += "<h4>Types</h4>";
+                        html_str += "<ul>";
+                        for(var idx = 0; idx < res.types.length; idx++) {
+                            html_str += "<li>" + res.types[idx].name + "</li>";
+                        }
+                        html_str += "</ul>";
+                        $(".right").html('<img class="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>' + html_str + "<h4>Attack</h4>" + res.attack + "<h4>Height</h4>" + res.height);
+                    }, "json");
+                });
+                // $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+                //     var html_str = "";
+                //     html_str += "<h4>Types</h4>";
+                //     html_str += "<ul>";
+                //     for(var idx = 0; idx < res.types.length; idx++) {
+                //         html_str += "<li>" + res.types[idx].name + "</li>";
+                //     }
+                //     html_str += "</ul>";
+                //     $(".right").html('<img class="' + i + '" src="http://pokeapi.co/media/img/' + i + '.png"/>' + html_str + "<h4>Attack</h4>" + res.attack + "<h4>Height</h4>" + res.height);
+                // }, "json");
+                //
+
             });
         </script>
     </head>

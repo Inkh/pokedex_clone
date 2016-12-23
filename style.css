@@ -20,3 +20,9 @@
 /*$.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
     console.log(res.abilities[0].name);
     },"json");*/
+ul li{
+    margin-left:30px;
+}
+h4{
+    margin:10px 0px;
+}
