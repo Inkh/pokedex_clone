@@ -2,20 +2,35 @@
     margin:0px;
     padding:0px;
     vertical-align: top;
+    font-family: sans-serif;
+}
+.wrapper{
+    height:auto;
+    width:auto;
+    background-color: #283747;
+}
+.banner{
+    height:100px;
+    width:100%;
+    background-color:gray;
 }
 .left{
     width:70%;
     height:auto;
     display:inline-block;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
 }
 .right{
-    width:25%;
+    width:20%;
     height:500px;
     display:inline-block;
-    border: 2px solid black;
+    border: 50px solid #A93226;
     box-sizing: border-box;
-    padding:30px;
+    padding:30px 30px 30px 60px;
+    background-color: white;
+    margin-left: 90px;
+    margin-top: 30px;
+    /*text-align: center;*/
 }
 /*$.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
     console.log(res.abilities[0].name);
@@ -25,4 +40,12 @@ ul li{
 }
 h4{
     margin:10px 0px;
+}
+img{
+    margin:5px;
+}
+h1{
+    line-height:100px;
+    margin-left: 50px;
+    color:white;
 }

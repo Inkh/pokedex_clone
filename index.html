@@ -17,23 +17,33 @@
                     console.log(poke);
                     $.get('http://pokeapi.co/api/v1/pokemon/' + poke + '/', function(res) {
                         var html_str = "";
+                        html_str += "<h2>" + res.name + "</h2>"
+                        html_str += '<img data-rel="' + poke + '" src="http://pokeapi.co/media/img/' + poke + '.png"/>';
                         html_str += "<h4>Types</h4>";
                         html_str += "<ul>";
                         for(var idx = 0; idx < res.types.length; idx++) {
                             html_str += "<li>" + res.types[idx].name + "</li>";
                         }
                         html_str += "</ul>";
-                        $(".right").html(
-                            '<img data-rel="' + poke + '" src="http://pokeapi.co/media/img/' + poke + '.png"/>' + html_str + "<h4>Attack</h4>" + res.attack + "<h4>Height</h4>" + res.height);
+                        html_str += "<h4>Attack</h4>";
+                        html_str += res.attack;
+                        html_str += "<h4>Height</h4>";
+                        html_str += res.height;
+                        $(".right").html(html_str);
                     }, "json");
                 });
             });
         </script>
     </head>
     <body>
-        <div class="left">
-        </div>
-        <div class="right">
+        <div class="wrapper">
+            <div class="banner">
+                <h1>Choose your pokemon!</h1>
+            </div>
+            <div class="left">
+            </div>
+            <div class="right">
+            </div>
         </div>
         <!-- <img src="http://pokeapi.co/media/img/1.png"> -->
     </body>
